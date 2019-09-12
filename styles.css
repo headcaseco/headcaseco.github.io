@@ -10,27 +10,26 @@
 
 body {
   font-family: 'Exo 2', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
   background: #000;
   min-height: 100vh;
 }
 
 h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
   font-size: 13rem;
-  font-weight: 200;
+  font-weight: 100;
   font-style: italic;
   color: #fff;
-  padding: 4rem 6rem 5.5rem;
-/*   border: 0.4rem solid #fff; */
-/*   border-radius: 2rem; */
+  padding: 1rem;
+  margin: 0;
+  border: none;
   text-transform: uppercase;
-  animation: flicker 1.5s infinite alternate; 
-  
-  @media only screen and (max-width: 600px) {
-     font-size: 8rem;
-  }
+
+  animation: flicker 1.5s infinite alternate;
 }
 
 h1::-moz-selection {
@@ -43,6 +42,12 @@ h1::selection {
 
 h1:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+   font-size: 8rem;
+  }
 }
 
 /* Animate neon flicker */
