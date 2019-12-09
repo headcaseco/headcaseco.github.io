@@ -9,7 +9,7 @@ export default {
   name: 'Slideshow',
   data() {
     return {
-        slides: ['management', 'business', 'design', 'advertising'],
+        slides: ['management', 'marketing', 'consulting', 'events', '_______'],
         domSlides: {},
         currentSlide: 0,
         intervalid1: null
@@ -50,6 +50,15 @@ export default {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
+
+  transition: .6s all ease-in-out .5s;
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.creative.show .slideshow {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 .slide {
@@ -74,12 +83,14 @@ export default {
 }
 
 /* Responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   .slideshow {
     width: 100%;
   }
   .slide {
     font-size: 3rem;
+    padding-left: 20px;
+
   }
 }
 </style>

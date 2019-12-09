@@ -26,7 +26,7 @@ export default {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 9rem;
   font-weight: 100;
   padding: 0 1rem;
   margin: 0;
@@ -67,9 +67,9 @@ h1:focus {
 }
 
 /* Responsive */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   h1 {
-   font-size: 5.5rem;
+   font-size: 4.5rem;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div v-observe-visibility="aboutInView" :class="['about-section',{'in-view': showAbout}]">
-    <p>Headcase is an equity metrics sales facebook return on investment user experience crowdfunding partnership MVP monetization business model canvas launch party stealth growth hacking. Ecosystem disruptive early adopters vesting period pitch freemium android interaction design gamification. User experience advisor graphical user interface iteration investor. Bandwidth entrepreneur startup gamification backing ecosystem validation.</p>
+    <p>Headcase is an equity metrics sales facebook return on investment user experience crowdfunding partnership MVP monetization business model canvas launch party stealth growth hacking.</p>
   </div>
 </template>
 
@@ -61,10 +61,11 @@ p {
 }
 
 /* Responsive */
-@media only screen and (max-width: 600px) {
-  .about-section {
+@media only screen and (max-width: 750px) {
+  .about-section p {
     max-width: 100%;
     text-align: right;
+    font-size: 1rem;
   }
 }
 </style>
