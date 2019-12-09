@@ -1,5 +1,5 @@
 <template>
-  <ul id="slides" class="slideshow" ref="slides">
+  <ul class="slideshow" ref="slides">
     <li :class="['slide', {'active': currentSlide == i}]" v-for="(slide, i) in slides" :key="i">{{slide}}</li>
   </ul>
 </template>
@@ -24,13 +24,12 @@ export default {
   methods: {
     nextSlide() {
       // console.log('this.currentSlide', this.currentSlide)
-
       this.domSlides[this.currentSlide].className = 'slide'
       this.currentSlide = (this.currentSlide+1) % this.domSlides.length
       this.domSlides[this.currentSlide].className = 'slide active'
     },
     initSlideshow() {
-      this.domSlides = document.querySelectorAll('#slides .slide')
+      this.domSlides = document.querySelectorAll('.slideshow .slide')
       this.setSlideInterval()
     },
     setSlideInterval() {
@@ -44,32 +43,13 @@ export default {
 
 <style scoped>
 .slideshow {
-  /*scroll-snap-align: end;*/
-  /*width: 100%;*/
   display: inline-block;  
   width: 50%;
-  height: 100px;
+  height: 75px;
   position: relative;
   padding: 0px;
   margin: 0px;
   list-style-type: none;
-}
-
-.slideshow:after {
-    content: '';
-    position: absolute;
-    left: 0; 
-    bottom: -4px;
-    height: 4px;
-    background-color: #fff;
-    width: 0;
-    transition: width .25s;
-    width: 100%;
-  }
-
-
-.placeholder {
-  opacity: 0;
 }
 
 .slide {
@@ -81,16 +61,25 @@ export default {
   opacity: 0;
   z-index: 10;
 
-  font-size: 80px;
+  font-size: 4rem;
   color: #fff;
   box-sizing: border-box;
-  text-align: center;
+  text-align: left;
   display: block;
-
+  font-weight: 300;
 }
-
 .active {
   opacity: 1;
   z-index: 20;
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+  .slideshow {
+    width: 100%;
+  }
+  .slide {
+    font-size: 3rem;
+  }
 }
 </style>

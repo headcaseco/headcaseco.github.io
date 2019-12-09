@@ -1,35 +1,28 @@
 <template>
   <div class="creative">
-    <h3>Creative</h3>
+    <h3>creative</h3>
     <slot />
-    <span>.</span>
   </div>
 </template>
 
 <script>
-// import WordList from './components/WordList.vue'
+
 
 export default {
   name: 'Creative',
-  components: {
-    // WordList
-  },
   props: {
       text: String
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .creative {
   text-align: center;
-  margin: 20px 0;
-  padding: 0 20px;
   box-sizing: border-box;
   height: 100vh;
   scroll-snap-align: center;
+  overflow: hidden;
 
   display: flex;
   flex-direction: row;
@@ -39,27 +32,41 @@ export default {
   align-items: center;
 }
 
-h3 {
-  padding: 0px;
-  margin: 0;
-}
-
 h3,
-span {
-  font-size: 5rem;
-  font-weight: 100;
-  text-transform: capitalize;
-  display: inline-block;
+ul {
+  transition: .6s all ease-in-out .5s;
+  transform: translateY(-10%);
+  opacity: 0;
+}
+.creative.show h3, 
+.creative.show ul {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
+h3 {
+  font-size: 4rem;
+  font-weight: 100;
+  display: inline-block;
+  padding: 0px 20px 0px 0px;
+  box-sizing: border-box;
+  margin: 0;
+  width: 50%;
+  text-align: right;
+  font-family: var(--body-font);
+  font-weight: 600;
+}
 
-@media only screen and (max-width: 600px) {
-  .word-list {
-    max-width: 350px;
-    text-align: right;
+/* Responsive */
+@media only screen and (max-width: 750px) {
+  .creative {
+    flex-direction: column;
   }
   h3 {
     font-size: 3rem;
+    padding-right: 0;
+    text-align: left;
+    width: 100%;
   }
 }
 </style>

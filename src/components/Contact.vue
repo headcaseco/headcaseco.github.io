@@ -11,12 +11,13 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  a {
-    right: 0px;
+  .contact {
+    right: 60px;
     bottom: 0px;
-    /*top: 20px;*/
-    /*transform: rotate(90deg);*/
+    transform-origin: bottom right;
+  }
+  .contact.show{
+    transform: rotate(90deg);
   }
 </style>

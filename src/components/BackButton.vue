@@ -12,9 +12,8 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  a {
+  .back-button {
     top: 10px;
     left: -10px;
     transform: rotate(-90deg);

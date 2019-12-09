@@ -1,5 +1,5 @@
 <template>
-  <a class="button social" href="https://instagram.com/headcase">Instagram</a>
+  <a class="button social" href="https://instagram.com/czllnr" target="_blank">Instagram</a>
 </template>
 
 <script>
@@ -12,11 +12,13 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .social {
-    bottom:  0px;
-    left: 0px;
-    /*transform: rotate(-90deg);*/
+    bottom: 0px;
+    left: 60px;
+    transform-origin: bottom left;
+  }
+  .social.show {
+    transform: rotate(-90deg);
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-      <LandingLogo text="Headcase" v-observe-visibility="logoInView"/>
+      <LandingLogo text="Headcase" :class="[{'show': showLogo}]" v-observe-visibility="logoInView"/>
       
-      <Creative>
+      <Creative :class="[{'show': showSlideshow}]" v-observe-visibility="slideshowInView">
         <Slideshow />
       </Creative>
 
@@ -46,12 +46,24 @@ export default {
   },
   data() {
     return {
-      showButtons: true
+      showButtons: false,
+      showLogo: false,
+      showSlideshow: false
     }
   },
   methods: {
     logoInView(isVisible) {
       this.showButtons = !isVisible
+      this.showLogo = isVisible
+      /* eslint-disable no-console */
+      console.log('this.showButtons', this.showButtons, 'this.showLogo ', this.showLogo ,'isVisible', isVisible)
+      /* eslint-disable no-console */
+    },
+    slideshowInView(isVisible) {
+      this.showSlideshow = isVisible
+            /* eslint-disable no-console */
+      console.log('showSlideshow', this.showSlideshow)
+      /* eslint-disable no-console */
     }
   }
 }
@@ -83,8 +95,15 @@ h1,h2,h3,h4,h5 {
   font-family: var(--header-font);
 }
 
+.about-section,
+.creative,
+.landing-logo {
+  margin: 20px auto;
+}
+
 .button {
   position: fixed;
+  z-index: 900;
   text-transform: lowercase;
 
   padding: 20px;

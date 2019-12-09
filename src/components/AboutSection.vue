@@ -1,6 +1,6 @@
 <template>
   <div v-observe-visibility="aboutInView" :class="['about-section',{'in-view': showAbout}]">
-    Heacdcase is an equity metrics sales facebook return on investment user experience crowdfunding partnership MVP monetization business model canvas launch party stealth growth hacking. Ecosystem disruptive early adopters vesting period pitch freemium android interaction design gamification. User experience advisor graphical user interface iteration investor. Bandwidth entrepreneur startup gamification backing ecosystem validation.
+    <p>Headcase is an equity metrics sales facebook return on investment user experience crowdfunding partnership MVP monetization business model canvas launch party stealth growth hacking. Ecosystem disruptive early adopters vesting period pitch freemium android interaction design gamification. User experience advisor graphical user interface iteration investor. Bandwidth entrepreneur startup gamification backing ecosystem validation.</p>
   </div>
 </template>
 
@@ -30,17 +30,10 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .about-section {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  letter-spacing: 1.5px;
-  text-align: justify;
   height: 100vh;
-  max-width: 600px;
   margin: 0 auto;
-  padding: 0 20px;
   box-sizing: border-box;
   scroll-snap-align: end;
 
@@ -50,17 +43,24 @@ export default {
   justify-content: center;
   align-content: stretch;
   align-items: center;
-
+}
+p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  text-align: justify;
+  max-width: 600px;
+  padding: 0 20px;
   transform: translateY(10%);
   opacity: 0;
-  transition: all .6s ease-in-out .1s;
+  transition: all .6s ease-in-out .5s;
 }
-
-.in-view {
+.in-view p {
   transform: translateY(0);
   opacity: 1;
 }
 
+/* Responsive */
 @media only screen and (max-width: 600px) {
   .about-section {
     max-width: 100%;
