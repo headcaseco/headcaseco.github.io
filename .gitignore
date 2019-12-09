@@ -1,13 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-#ignore non-dist dirs
+#DEV ignore
 node_modules/
-public/
-src/
-babel.*
-package.*
-README.md
-vue.config.js
+dist/
+src/assets/fonts/
+
 ### Node template
 # Logs
 logs
